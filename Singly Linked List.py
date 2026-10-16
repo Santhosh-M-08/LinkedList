@@ -82,6 +82,20 @@ def delmiddle(val):
       temp=temp.next
     temp.next=temp.next.next
 
+def reverse():
+    global head
+
+    prev = None
+    temp = head
+
+    while temp is not None:
+        next_node = temp.next
+        temp.next = prev
+        prev = temp
+        temp = next_node
+
+    head = prev
+
 n = int(input("Enter the number of nodes:"))
 for i in range(n):
   val = int(input("Enter value:"))
